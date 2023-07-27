@@ -16,26 +16,33 @@ class App extends Component {
         { id: 2, fName: "Kostya", lName: "Reks" },
         { id: 5, fName: "Valentin", lName: "Grigorenko" },
       ],
+      isAscendingSortById: true,
     };
   }
   sortById = () => {
-    const {users} = this.state
-    users.sort((a,b)=>{
-      return a.id-b.id
-    })
-    this.setState({users})
+    const { users, isAscendingSortById } = this.state;
+    const copyUsers = JSON.parse(JSON.stringify(users));
+    copyUsers.sort((a, b) => {
+      return isAscendingSortById ? a.id - b.id : b.id - a.id;
+    });
+    this.setState({
+      users: copyUsers,
+      isAscendingSortById: !isAscendingSortById,
+    });
   };
   render() {
-    const { users } = this.state;
+    const { users, isAscendingSortById } = this.state;
     return (
       <>
         <h1 className="heading" title="react">
           Hi!
         </h1>
-        <button onClick={this.sortById}>Sort by ID</button>
+        <button onClick={this.sortById}>
+          Sort by ID {isAscendingSortById ? "DOWN" : "UP"}
+        </button>
         <ol>
-          {users.map((user, i) => (
-            <li key={i}>
+          {users.map((user) => (
+            <li key={user.id}>
               <Ciao fname={user.fName} sname={user.lName} id={user.id} />
             </li>
           ))}
