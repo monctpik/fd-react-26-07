@@ -11,15 +11,13 @@ class UserCard extends Component {
       setIsSelected,
     } = this.props;
     const styles = { backgroundColor: isSelected ? "green" : "grey" };
-    const handlerBtn = () => setIsSelected(id)
+    const handlerBtn = () => setIsSelected(id);
     return (
       <article style={styles}>
         <h3>
           [id:{id}] {fName} {lName}
         </h3>
-        <button onClick={handlerBtn}>
-          Select this user
-        </button>
+        <button onClick={handlerBtn}>Select this user</button>
       </article>
     );
   }

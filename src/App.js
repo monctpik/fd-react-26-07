@@ -1,6 +1,8 @@
+import React from "react";
 import "./App.css";
-import UserList from "./components/UsersList";
-// import CiaoSection from "./components/CiaoDashbord/CiaoSection";
+
+import UsersDashbord from "./components/UsersDashbord";
+
 
 // const user = {};
 
@@ -8,7 +10,7 @@ const App = () => {
   return (
     <>
       {/* <CiaoSection /> */}
-      <UserList />
+    <UsersDashbord />
     </>
   );
 };
