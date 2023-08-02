@@ -1,15 +1,14 @@
 import "./App.css";
-import Ciao from "./components/Ciao";
-import CiaoSection from "./components/CiaoSection";
-import MyLink from "./components/MyLink";
-import { Component } from "react";
+import UserList from "./components/UsersList";
+// import CiaoSection from "./components/CiaoDashbord/CiaoSection";
 
 // const user = {};
 
 const App = () => {
   return (
     <>
-      <CiaoSection />
+      {/* <CiaoSection /> */}
+      <UserList />
     </>
   );
 };

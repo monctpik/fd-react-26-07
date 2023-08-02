@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 // import CiaoList from "./index";
 // import Ciao from "../Ciao/index";
-import CiaoList from "../CiaoList/index";
-import CiaoHeading from "../CiaoHeading/index";
+import CiaoHeading from '../../CiaoDashbord/CiaoHeading/index';
+import CiaoList from '../../CiaoDashbord/CiaoList/index';
+
+
 
 class CiaoSection extends Component {
   constructor(props) {
