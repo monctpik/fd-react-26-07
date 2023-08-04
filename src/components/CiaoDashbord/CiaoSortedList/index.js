@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
+import React from "react";
 
-class CiaoSortedList extends Component {
-    render() {
-        return (
-            <div>
-                
-            </div>
-        );
-    }
-}
+const CiaoSortedList = (props) => {
+  const { sortBy, isUpSort, context } = props;
+  return (
+    <button onClick={sortBy}>
+      Sort by {context} {isUpSort ? "DOWN" : "UP"}
+    </button>
+  );
+};
 
 export default CiaoSortedList;

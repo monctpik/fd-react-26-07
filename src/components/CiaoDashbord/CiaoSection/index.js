@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 // import CiaoList from "./index";
 // import Ciao from "../Ciao/index";
-import CiaoHeading from '../../CiaoDashbord/CiaoHeading/index';
-import CiaoList from '../../CiaoDashbord/CiaoList/index';
-
-
+import CiaoHeading from "../../CiaoDashbord/CiaoHeading/index";
+import CiaoList from "../../CiaoDashbord/CiaoList/index";
+import CiaoSortedList from "../CiaoSortedList/index";
 
 class CiaoSection extends Component {
   constructor(props) {
@@ -52,12 +51,17 @@ class CiaoSection extends Component {
       <>
         <CiaoHeading content="Hello" title="react" className="heading" />
 
-        <button onClick={this.sortById}>
-          Sort by ID {isAscendingSortById ? "DOWN" : "UP"}
-        </button>
-        <button onClick={this.sortByLName}>
-          Sort by LNAME {upDown ? "DOWN" : "UP"}
-        </button>
+        <CiaoSortedList
+          sortBy={this.sortById}
+          isUpSort={isAscendingSortById}
+          context="ID"
+        />
+        <CiaoSortedList
+          sortBy={this.sortByLName}
+          isUpSort={upDown}
+          context="Name"
+        />
+
         <CiaoList users={users} />
 
         {/* <MyLink className="myLink" href="#" /> */}
