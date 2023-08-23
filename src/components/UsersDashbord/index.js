@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SelectUserList from "../SelectUserList/index";
 import UserList from "../UsersList/index";
+import styles from "./UsersDashbord.module.css"
 const usersDB = [
   { id: 3, fName: "Elon", lName: "Ausk" },
   { id: 1, fName: "Anna", lName: "Bolushko" },
@@ -25,7 +26,7 @@ class UsersDashbord extends Component {
     const { users } = this.state;
     return (
       <>
-        <header>
+        <header className={styles.container}>
           <SelectUserList users={users} />
         </header>
         <main>
